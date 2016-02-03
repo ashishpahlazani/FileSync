@@ -1,9 +1,9 @@
 package client.file_change_detector;
 
-import static java.nio.file.StandardWatchEventKind.ENTRY_CREATE;
-import static java.nio.file.StandardWatchEventKind.ENTRY_DELETE;
-import static java.nio.file.StandardWatchEventKind.ENTRY_MODIFY;
-import static java.nio.file.StandardWatchEventKind.OVERFLOW;
+import static java.nio.file.StandardWatchEventKinds.ENTRY_CREATE;
+import static java.nio.file.StandardWatchEventKinds.ENTRY_DELETE;
+import static java.nio.file.StandardWatchEventKinds.ENTRY_MODIFY;
+import static java.nio.file.StandardWatchEventKinds.OVERFLOW;
 
 import java.io.File;
 import java.io.IOException;
