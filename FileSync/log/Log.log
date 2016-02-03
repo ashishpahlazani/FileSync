@@ -1,0 +1,682 @@
+2016-01-03 17:06:55,063 DEBUG [main] server.Server  -loadUsernamePasswordProperties - LEAVE
+
+2016-01-03 17:06:55,067 DEBUG [main] server.Server  -loadUsernamePasswordProperties - LEAVE
+
+2016-01-03 17:06:55,067 DEBUG [main] server.Server  -loadProperties - LEAVE
+
+2016-01-03 17:06:55,071 DEBUG [main] server.Server  -loadRevisionNumberAndFileStatus - ENTER
+
+2016-01-03 17:06:55,071 INFO  [main] server.Server  -currentRevisionNumber = 0
+
+2016-01-03 17:06:55,079 DEBUG [main] server.Server  -loadRevisionNumberAndFileStatus - LEAVE
+
+2016-01-03 17:06:55,083 DEBUG [main] server.ServerConnectionWorker  -ServerConnectionWorker Constructor - ENTER
+
+2016-01-03 17:06:55,087 DEBUG [main] server.ServerConnectionWorker  -ServerConnectionWorker Constructor - LEAVE
+
+2016-01-03 17:06:55,087 DEBUG [pool-1-thread-1] server.SyncPropogationWorker  -SyncPropogationWorker Thread -  ENTER
+
+2016-01-03 17:06:55,087 DEBUG [main] server.Server  -serverConnectionThread started
+
+2016-01-03 17:06:55,087 DEBUG [Thread-0] server.ServerConnectionWorker  -Server Connection Started
+
+2016-01-03 17:06:55,087 DEBUG [Thread-0] server.ServerConnectionWorker  -Waiting for new connection request
+
+2016-01-03 17:06:59,752 DEBUG [main] client.Client  -Client Constructor - ENTER
+
+2016-01-03 17:06:59,752 DEBUG [main] client.Client  -loadClientProperties - ENTER
+
+2016-01-03 17:06:59,752 DEBUG [main] client.Client  -loadClientProperties - LEAVE
+
+2016-01-03 17:06:59,752 DEBUG [main] client.Client  -loadFilesStatus - ENTER
+
+2016-01-03 17:06:59,764 INFO  [main] client.Client  - filesStatusMap = {\Client2\config\log4j.properties=5, \The_Naked_Ape.pdf=12, \Client2\log\Log.log=2, \Client1\Client.jar=22, \Client2\client1.properties=4, \Client2\client.dat=1, \The Intelligent Investor - BENJAMIN GRAHAM.pdf=-1, \Client1\log\Log.log=20, \Effective Java - 2nd Edition.pdf=16, \Client1\config\log4j.properties=17, \sql_tutorial.pdf=13, \Head First Design Patterns.pdf=-1, \Client1\client1.properties=18, \Client2\Client.jar=3, \New Text Document.txt=8}
+
+2016-01-03 17:06:59,764 DEBUG [main] client.Client  -loadFilesStatus - LEAVE
+
+2016-01-03 17:06:59,772 DEBUG [Thread-0] server.ServerConnectionWorker  -new Client connected
+
+2016-01-03 17:06:59,775 INFO  [main] client.Client  -Client Connected : Writing userName
+
+2016-01-03 17:06:59,775 DEBUG [main] client.Client  -sendMessageToServer - ENTER Action = USRNAME_PASSWORD message = Client1:password
+
+2016-01-03 17:06:59,775 DEBUG [main] client.Client  -sendMessageToServer - LEAVE
+
+2016-01-03 17:06:59,776 DEBUG [main] client.file_change_detector.ScanBasedFileChangeDetector  -ScanBasedFileChangeDetector Constructor - ENTER
+
+2016-01-03 17:06:59,776 INFO  [Thread-0] server.ClientHandler  -client handler initialized
+
+2016-01-03 17:06:59,776 DEBUG [Thread-0] server.ServerConnectionWorker  -Waiting for new connection request
+
+2016-01-03 17:06:59,776 DEBUG [pool-1-thread-2] server.ClientHandler  -Executing ClientHandler
+
+2016-01-03 17:06:59,776 DEBUG [pool-1-thread-2] common.EncryptionUtil  -decrypt Enter message = 4:Client1:password
+
+2016-01-03 17:06:59,776 DEBUG [main] client.file_change_detector.ScanBasedFileChangeDetector  -ScanBasedFileChangeDetector Constructor - LEAVE
+
+2016-01-03 17:06:59,776 INFO  [pool-1-thread-2] server.ClientHandler  -actualMessage = 4:Client1:password
+
+2016-01-03 17:06:59,780 INFO  [main] client.Client  -fileChangeDetector started
+
+2016-01-03 17:06:59,780 INFO  [pool-1-thread-2] server.ClientHandler  -Action :USRNAME_PASSWORD Message received from client = Client1:password
+
+2016-01-03 17:06:59,783 INFO  [main] client.Client  -ClientSocketListenerWorker started
+
+2016-01-03 17:06:59,783 DEBUG [Thread-1] client.ClientSocketListenerWorker  -ClientSocketListenerStarted
+
+2016-01-03 17:06:59,783 DEBUG [Thread-1] client.Client  -sendMessageToServer - ENTER Action = FILE_SOCKET_PORT message = 3001
+
+2016-01-03 17:06:59,783 DEBUG [Thread-1] client.Client  -sendMessageToServer - LEAVE
+
+2016-01-03 17:06:59,783 INFO  [Thread-1] client.ClientSocketListenerWorker  -waiting for message from server
+
+2016-01-03 17:07:15,757 DEBUG [main] client.Client  -Client Constructor - ENTER
+
+2016-01-03 17:07:15,761 DEBUG [main] client.Client  -loadClientProperties - ENTER
+
+2016-01-03 17:07:15,761 DEBUG [main] client.Client  -loadClientProperties - LEAVE
+
+2016-01-03 17:07:15,761 DEBUG [main] client.Client  -loadFilesStatus - ENTER
+
+2016-01-03 17:07:15,777 INFO  [main] client.Client  - filesStatusMap = {\Client2\config\log4j.properties=5, \The_Naked_Ape.pdf=12, \Client2\log\Log.log=2, \Client1\Client.jar=22, \Client2\client1.properties=4, \Client2\client.dat=1, \The Intelligent Investor - BENJAMIN GRAHAM.pdf=-1, \Client1\log\Log.log=20, \Effective Java - 2nd Edition.pdf=16, \Client1\config\log4j.properties=17, \sql_tutorial.pdf=13, \Head First Design Patterns.pdf=-1, \Client1\client1.properties=18, \Client2\Client.jar=3, \New Text Document.txt=8}
+
+2016-01-03 17:07:15,777 DEBUG [main] client.Client  -loadFilesStatus - LEAVE
+
+2016-01-03 17:07:15,789 DEBUG [Thread-0] server.ServerConnectionWorker  -new Client connected
+
+2016-01-03 17:07:15,789 INFO  [Thread-0] server.ClientHandler  -client handler initialized
+
+2016-01-03 17:07:15,792 DEBUG [Thread-0] server.ServerConnectionWorker  -Waiting for new connection request
+
+2016-01-03 17:07:15,792 DEBUG [pool-1-thread-3] server.ClientHandler  -Executing ClientHandler
+
+2016-01-03 17:07:15,792 INFO  [main] client.Client  -Client Connected : Writing userName
+
+2016-01-03 17:07:15,792 DEBUG [main] client.Client  -sendMessageToServer - ENTER Action = USRNAME_PASSWORD message = Client2:password
+
+2016-01-03 17:07:15,793 DEBUG [main] client.Client  -sendMessageToServer - LEAVE
+
+2016-01-03 17:07:15,793 DEBUG [pool-1-thread-3] common.EncryptionUtil  -decrypt Enter message = 4:Client2:password
+
+2016-01-03 17:07:15,793 INFO  [pool-1-thread-3] server.ClientHandler  -actualMessage = 4:Client2:password
+
+2016-01-03 17:07:15,793 INFO  [pool-1-thread-3] server.ClientHandler  -Action :USRNAME_PASSWORD Message received from client = Client2:password
+
+2016-01-03 17:07:15,794 DEBUG [main] client.file_change_detector.ScanBasedFileChangeDetector  -ScanBasedFileChangeDetector Constructor - ENTER
+
+2016-01-03 17:07:15,794 DEBUG [main] client.file_change_detector.ScanBasedFileChangeDetector  -ScanBasedFileChangeDetector Constructor - LEAVE
+
+2016-01-03 17:07:15,795 INFO  [main] client.Client  -fileChangeDetector started
+
+2016-01-03 17:07:15,795 INFO  [main] client.Client  -ClientSocketListenerWorker started
+
+2016-01-03 17:07:15,795 DEBUG [Thread-1] client.ClientSocketListenerWorker  -ClientSocketListenerStarted
+
+2016-01-03 17:07:15,799 DEBUG [Thread-1] client.Client  -sendMessageToServer - ENTER Action = FILE_SOCKET_PORT message = 3002
+
+2016-01-03 17:07:15,799 DEBUG [Thread-1] client.Client  -sendMessageToServer - LEAVE
+
+2016-01-03 17:07:15,799 INFO  [Thread-1] client.ClientSocketListenerWorker  -waiting for message from server
+
+2016-01-03 17:17:10,083 DEBUG [main] server.Server  -loadProperties - LEAVE
+
+2016-01-03 17:17:10,087 DEBUG [main] server.Server  -loadUsernamePasswordProperties - LEAVE
+
+2016-01-03 17:17:10,091 DEBUG [main] server.Server  -loadUsernamePasswordProperties - LEAVE
+
+2016-01-03 17:17:10,091 DEBUG [main] server.Server  -loadProperties - LEAVE
+
+2016-01-03 17:17:10,091 DEBUG [main] server.Server  -loadRevisionNumberAndFileStatus - ENTER
+
+2016-01-03 17:17:10,091 INFO  [main] server.Server  -currentRevisionNumber = 0
+
+2016-01-03 17:17:10,099 DEBUG [main] server.Server  -loadRevisionNumberAndFileStatus - LEAVE
+
+2016-01-03 17:17:10,103 DEBUG [main] server.ServerConnectionWorker  -ServerConnectionWorker Constructor - ENTER
+
+2016-01-03 17:17:10,107 DEBUG [main] server.ServerConnectionWorker  -ServerConnectionWorker Constructor - LEAVE
+
+2016-01-03 17:17:10,107 DEBUG [pool-1-thread-1] server.SyncPropogationWorker  -SyncPropogationWorker Thread -  ENTER
+
+2016-01-03 17:17:10,107 DEBUG [main] server.Server  -serverConnectionThread started
+
+2016-01-03 17:17:10,107 DEBUG [Thread-0] server.ServerConnectionWorker  -Server Connection Started
+
+2016-01-03 17:17:10,107 DEBUG [Thread-0] server.ServerConnectionWorker  -Waiting for new connection request
+
+2016-01-03 17:17:13,571 DEBUG [main] client.Client  -Client Constructor - ENTER
+
+2016-01-03 17:17:13,571 DEBUG [main] client.Client  -loadClientProperties - ENTER
+
+2016-01-03 17:17:13,571 DEBUG [main] client.Client  -loadClientProperties - LEAVE
+
+2016-01-03 17:17:13,571 DEBUG [main] client.Client  -loadFilesStatus - ENTER
+
+2016-01-03 17:17:13,583 INFO  [main] client.Client  - filesStatusMap = {\Client2\config\log4j.properties=5, \The_Naked_Ape.pdf=12, \Client2\log\Log.log=2, \Client1\Client.jar=22, \Client2\client1.properties=4, \Client2\client.dat=1, \The Intelligent Investor - BENJAMIN GRAHAM.pdf=-1, \Client1\log\Log.log=20, \Effective Java - 2nd Edition.pdf=16, \Client1\config\log4j.properties=17, \sql_tutorial.pdf=13, \Head First Design Patterns.pdf=-1, \Client1\client1.properties=18, \Client2\Client.jar=3, \New Text Document.txt=8}
+
+2016-01-03 17:17:13,583 DEBUG [main] client.Client  -loadFilesStatus - LEAVE
+
+2016-01-03 17:17:13,595 DEBUG [Thread-0] server.ServerConnectionWorker  -new Client connected
+
+2016-01-03 17:17:13,596 INFO  [main] client.Client  -Client Connected : Writing userName
+
+2016-01-03 17:17:13,596 DEBUG [main] client.Client  -sendMessageToServer - ENTER Action = USRNAME_PASSWORD message = Client2:password
+
+2016-01-03 17:17:13,596 DEBUG [main] client.Client  -sendMessageToServer - LEAVE
+
+2016-01-03 17:17:13,597 DEBUG [main] client.file_change_detector.ScanBasedFileChangeDetector  -ScanBasedFileChangeDetector Constructor - ENTER
+
+2016-01-03 17:17:13,597 DEBUG [main] client.file_change_detector.ScanBasedFileChangeDetector  -ScanBasedFileChangeDetector Constructor - LEAVE
+
+2016-01-03 17:17:13,597 INFO  [Thread-0] server.ClientHandler  -client handler initialized
+
+2016-01-03 17:17:13,597 DEBUG [Thread-0] server.ServerConnectionWorker  -Waiting for new connection request
+
+2016-01-03 17:17:13,597 DEBUG [pool-1-thread-2] server.ClientHandler  -Executing ClientHandler
+
+2016-01-03 17:17:13,597 INFO  [main] client.Client  -fileChangeDetector started
+
+2016-01-03 17:17:13,597 DEBUG [pool-1-thread-2] common.EncryptionUtil  -decrypt Enter message = 4:Client2:password
+
+2016-01-03 17:17:13,597 INFO  [pool-1-thread-2] server.ClientHandler  -actualMessage = 4:Client2:password
+
+2016-01-03 17:17:13,597 INFO  [pool-1-thread-2] server.ClientHandler  -Action :USRNAME_PASSWORD Message received from client = Client2:password
+
+2016-01-03 17:17:13,597 INFO  [main] client.Client  -ClientSocketListenerWorker started
+
+2016-01-03 17:17:13,597 DEBUG [Thread-1] client.ClientSocketListenerWorker  -ClientSocketListenerStarted
+
+2016-01-03 17:17:13,601 DEBUG [Thread-1] client.Client  -sendMessageToServer - ENTER Action = FILE_SOCKET_PORT message = 3002
+
+2016-01-03 17:17:13,601 DEBUG [Thread-1] client.Client  -sendMessageToServer - LEAVE
+
+2016-01-03 17:17:13,601 INFO  [Thread-1] client.ClientSocketListenerWorker  -waiting for message from server
+
+2016-01-03 17:19:35,948 ERROR [Thread-1] client.ClientSocketListenerWorker  -Exception while reading from server, CLosing thread :java.net.SocketException: Connection reset
+
+2016-01-03 17:19:35,948 DEBUG [Thread-1] client.ClientSocketListenerWorker  -ClientSocketListener Stoped
+
+2016-01-03 17:19:35,949 INFO  [main] client.Client  -ClientSocketListenerWorker stopped
+
+2016-01-03 17:19:35,949 DEBUG [main] client.Client  -destroy - ENTER
+
+2016-01-03 17:19:35,949 DEBUG [main] client.Client  -saveFilesStatus - ENTER
+
+2016-01-03 17:19:35,961 DEBUG [main] client.Client  -saveFilesStatus - ENTER
+
+2016-01-03 17:19:35,961 DEBUG [main] client.Client  -destroy - LEAVE
+
+2016-01-03 17:19:35,961 DEBUG [main] client.Client  -Client Constructor - LEAVE
+
+2016-01-03 17:19:39,998 DEBUG [main] server.Server  -loadProperties - LEAVE
+
+2016-01-03 17:19:39,998 DEBUG [main] server.Server  -loadUsernamePasswordProperties - LEAVE
+
+2016-01-03 17:19:40,002 DEBUG [main] server.Server  -loadUsernamePasswordProperties - LEAVE
+
+2016-01-03 17:19:40,002 DEBUG [main] server.Server  -loadProperties - LEAVE
+
+2016-01-03 17:19:40,002 DEBUG [main] server.Server  -loadRevisionNumberAndFileStatus - ENTER
+
+2016-01-03 17:19:40,006 INFO  [main] server.Server  -currentRevisionNumber = 0
+
+2016-01-03 17:19:40,014 DEBUG [main] server.Server  -loadRevisionNumberAndFileStatus - LEAVE
+
+2016-01-03 17:19:40,018 DEBUG [main] server.ServerConnectionWorker  -ServerConnectionWorker Constructor - ENTER
+
+2016-01-03 17:19:40,018 DEBUG [main] server.ServerConnectionWorker  -ServerConnectionWorker Constructor - LEAVE
+
+2016-01-03 17:19:40,022 DEBUG [pool-1-thread-1] server.SyncPropogationWorker  -SyncPropogationWorker Thread -  ENTER
+
+2016-01-03 17:19:40,022 DEBUG [main] server.Server  -serverConnectionThread started
+
+2016-01-03 17:19:40,022 DEBUG [Thread-0] server.ServerConnectionWorker  -Server Connection Started
+
+2016-01-03 17:19:40,022 DEBUG [Thread-0] server.ServerConnectionWorker  -Waiting for new connection request
+
+2016-01-03 17:19:41,858 DEBUG [main] client.Client  -Client Constructor - ENTER
+
+2016-01-03 17:19:41,862 DEBUG [main] client.Client  -loadClientProperties - ENTER
+
+2016-01-03 17:19:41,862 DEBUG [main] client.Client  -loadClientProperties - LEAVE
+
+2016-01-03 17:19:41,862 DEBUG [main] client.Client  -loadFilesStatus - ENTER
+
+2016-01-03 17:19:41,874 INFO  [main] client.Client  - filesStatusMap = {\Client2\config\log4j.properties=5, \The_Naked_Ape.pdf=12, \Client1\Client.jar=22, \Client2\log\Log.log=2, \Client2\client1.properties=4, \Client2\client.dat=1, \The Intelligent Investor - BENJAMIN GRAHAM.pdf=-1, \Effective Java - 2nd Edition.pdf=16, \Client1\log\Log.log=20, \Client1\config\log4j.properties=17, \Head First Design Patterns.pdf=-1, \sql_tutorial.pdf=13, \Client1\client1.properties=18, \Client2\Client.jar=3, \New Text Document.txt=8}
+
+2016-01-03 17:19:41,874 DEBUG [main] client.Client  -loadFilesStatus - LEAVE
+
+2016-01-03 17:19:41,882 DEBUG [Thread-0] server.ServerConnectionWorker  -new Client connected
+
+2016-01-03 17:19:41,885 INFO  [main] client.Client  -Client Connected : Writing userName
+
+2016-01-03 17:19:41,885 DEBUG [main] client.Client  -sendMessageToServer - ENTER Action = USRNAME_PASSWORD message = Client2:password
+
+2016-01-03 17:19:41,885 DEBUG [main] client.Client  -sendMessageToServer - LEAVE
+
+2016-01-03 17:19:41,886 DEBUG [main] client.file_change_detector.ScanBasedFileChangeDetector  -ScanBasedFileChangeDetector Constructor - ENTER
+
+2016-01-03 17:19:41,886 DEBUG [main] client.file_change_detector.ScanBasedFileChangeDetector  -ScanBasedFileChangeDetector Constructor - LEAVE
+
+2016-01-03 17:19:41,886 INFO  [Thread-0] server.ClientHandler  -client handler initialized
+
+2016-01-03 17:19:41,886 DEBUG [Thread-0] server.ServerConnectionWorker  -Waiting for new connection request
+
+2016-01-03 17:19:41,886 INFO  [main] client.Client  -fileChangeDetector started
+
+2016-01-03 17:19:41,886 DEBUG [pool-1-thread-2] server.ClientHandler  -Executing ClientHandler
+
+2016-01-03 17:19:41,886 DEBUG [pool-1-thread-2] common.EncryptionUtil  -decrypt Enter message = 4:Client2:password
+
+2016-01-03 17:19:41,886 INFO  [pool-1-thread-2] server.ClientHandler  -actualMessage = 4:Client2:password
+
+2016-01-03 17:19:41,886 INFO  [main] client.Client  -ClientSocketListenerWorker started
+
+2016-01-03 17:19:41,886 DEBUG [Thread-1] client.ClientSocketListenerWorker  -ClientSocketListenerStarted
+
+2016-01-03 17:19:41,886 INFO  [pool-1-thread-2] server.ClientHandler  -Action :USRNAME_PASSWORD Message received from client = Client2:password
+
+2016-01-03 17:19:41,886 DEBUG [Thread-1] client.Client  -sendMessageToServer - ENTER Action = FILE_SOCKET_PORT message = 3002
+
+2016-01-03 17:19:41,886 DEBUG [Thread-1] client.Client  -sendMessageToServer - LEAVE
+
+2016-01-03 17:19:41,890 INFO  [pool-1-thread-2] server.Server  -clientPasswordAndIpAddress = null
+
+2016-01-03 17:19:41,890 INFO  [Thread-1] client.ClientSocketListenerWorker  -waiting for message from server
+
+2016-01-03 17:20:14,979 ERROR [Thread-1] client.ClientSocketListenerWorker  -Exception while reading from server, CLosing thread :java.net.SocketException: Connection reset
+
+2016-01-03 17:20:14,979 DEBUG [Thread-1] client.ClientSocketListenerWorker  -ClientSocketListener Stoped
+
+2016-01-03 17:20:14,979 INFO  [main] client.Client  -ClientSocketListenerWorker stopped
+
+2016-01-03 17:20:14,980 DEBUG [main] client.Client  -destroy - ENTER
+
+2016-01-03 17:20:14,980 DEBUG [main] client.Client  -saveFilesStatus - ENTER
+
+2016-01-03 17:20:15,000 DEBUG [main] client.Client  -saveFilesStatus - ENTER
+
+2016-01-03 17:20:15,000 DEBUG [main] client.Client  -destroy - LEAVE
+
+2016-01-03 17:20:15,000 DEBUG [main] client.Client  -Client Constructor - LEAVE
+
+2016-01-03 17:20:17,785 DEBUG [main] server.Server  -loadProperties - LEAVE
+
+2016-01-03 17:20:17,785 DEBUG [main] server.Server  -loadUsernamePasswordProperties - LEAVE
+
+2016-01-03 17:20:17,789 DEBUG [main] server.Server  -loadUsernamePasswordProperties - LEAVE
+
+2016-01-03 17:20:17,789 DEBUG [main] server.Server  -loadProperties - LEAVE
+
+2016-01-03 17:20:17,789 DEBUG [main] server.Server  -loadRevisionNumberAndFileStatus - ENTER
+
+2016-01-03 17:20:17,793 INFO  [main] server.Server  -currentRevisionNumber = 0
+
+2016-01-03 17:20:17,801 DEBUG [main] server.Server  -loadRevisionNumberAndFileStatus - LEAVE
+
+2016-01-03 17:20:17,801 DEBUG [main] server.ServerConnectionWorker  -ServerConnectionWorker Constructor - ENTER
+
+2016-01-03 17:20:17,805 DEBUG [main] server.ServerConnectionWorker  -ServerConnectionWorker Constructor - LEAVE
+
+2016-01-03 17:20:17,805 DEBUG [pool-1-thread-1] server.SyncPropogationWorker  -SyncPropogationWorker Thread -  ENTER
+
+2016-01-03 17:20:17,805 DEBUG [main] server.Server  -serverConnectionThread started
+
+2016-01-03 17:20:17,805 DEBUG [Thread-0] server.ServerConnectionWorker  -Server Connection Started
+
+2016-01-03 17:20:17,805 DEBUG [Thread-0] server.ServerConnectionWorker  -Waiting for new connection request
+
+2016-01-03 17:20:19,465 DEBUG [main] client.Client  -Client Constructor - ENTER
+
+2016-01-03 17:20:19,465 DEBUG [main] client.Client  -loadClientProperties - ENTER
+
+2016-01-03 17:20:19,465 DEBUG [main] client.Client  -loadClientProperties - LEAVE
+
+2016-01-03 17:20:19,465 DEBUG [main] client.Client  -loadFilesStatus - ENTER
+
+2016-01-03 17:20:19,477 INFO  [main] client.Client  - filesStatusMap = {\Client2\config\log4j.properties=5, \The_Naked_Ape.pdf=12, \Client2\log\Log.log=2, \Client1\Client.jar=22, \Client2\client1.properties=4, \Client2\client.dat=1, \The Intelligent Investor - BENJAMIN GRAHAM.pdf=-1, \Client1\log\Log.log=20, \Effective Java - 2nd Edition.pdf=16, \Client1\config\log4j.properties=17, \sql_tutorial.pdf=13, \Head First Design Patterns.pdf=-1, \Client1\client1.properties=18, \Client2\Client.jar=3, \New Text Document.txt=8}
+
+2016-01-03 17:20:19,477 DEBUG [main] client.Client  -loadFilesStatus - LEAVE
+
+2016-01-03 17:20:19,485 DEBUG [Thread-0] server.ServerConnectionWorker  -new Client connected
+
+2016-01-03 17:20:19,489 INFO  [main] client.Client  -Client Connected : Writing userName
+
+2016-01-03 17:20:19,489 DEBUG [main] client.Client  -sendMessageToServer - ENTER Action = USRNAME_PASSWORD message = Client2:password
+
+2016-01-03 17:20:19,489 DEBUG [main] client.Client  -sendMessageToServer - LEAVE
+
+2016-01-03 17:20:19,490 DEBUG [main] client.file_change_detector.ScanBasedFileChangeDetector  -ScanBasedFileChangeDetector Constructor - ENTER
+
+2016-01-03 17:20:19,490 DEBUG [main] client.file_change_detector.ScanBasedFileChangeDetector  -ScanBasedFileChangeDetector Constructor - LEAVE
+
+2016-01-03 17:20:19,490 INFO  [Thread-0] server.ClientHandler  -client handler initialized
+
+2016-01-03 17:20:19,490 DEBUG [Thread-0] server.ServerConnectionWorker  -Waiting for new connection request
+
+2016-01-03 17:20:19,490 INFO  [main] client.Client  -fileChangeDetector started
+
+2016-01-03 17:20:19,490 DEBUG [pool-1-thread-2] server.ClientHandler  -Executing ClientHandler
+
+2016-01-03 17:20:19,490 DEBUG [pool-1-thread-2] common.EncryptionUtil  -decrypt Enter message = 4:Client2:password
+
+2016-01-03 17:20:19,490 INFO  [pool-1-thread-2] server.ClientHandler  -actualMessage = 4:Client2:password
+
+2016-01-03 17:20:19,494 INFO  [main] client.Client  -ClientSocketListenerWorker started
+
+2016-01-03 17:20:19,494 DEBUG [Thread-1] client.ClientSocketListenerWorker  -ClientSocketListenerStarted
+
+2016-01-03 17:20:19,494 DEBUG [Thread-1] client.Client  -sendMessageToServer - ENTER Action = FILE_SOCKET_PORT message = 3002
+
+2016-01-03 17:20:19,494 DEBUG [Thread-1] client.Client  -sendMessageToServer - LEAVE
+
+2016-01-03 17:20:19,494 INFO  [Thread-1] client.ClientSocketListenerWorker  -waiting for message from server
+
+2016-01-03 17:20:19,494 INFO  [pool-1-thread-2] server.ClientHandler  -Action :USRNAME_PASSWORD Message received from client = Client2:password
+
+2016-01-03 17:20:19,494 INFO  [pool-1-thread-2] server.Server  -usernamePasswordProperties = {client2=password:127.0.0.1, client1=password:127.0.0.1, client=password:127.0.0.1, client3=password:127.0.0.1}
+
+2016-01-03 17:20:19,494 INFO  [pool-1-thread-2] server.Server  -clientPasswordAndIpAddress = null
+
+2016-01-03 17:22:04,552 DEBUG [main] server.Server  -initializeLogger - LEAVE
+
+2016-01-03 17:22:04,556 DEBUG [main] server.Server  -loadProperties - LEAVE
+
+2016-01-03 17:22:04,556 DEBUG [main] server.Server  -loadUsernamePasswordProperties - LEAVE
+
+2016-01-03 17:22:04,556 DEBUG [main] server.Server  -initializeLogger - ENTER
+
+2016-01-03 17:22:04,560 DEBUG [main] server.Server  -initializeLogger - LEAVE
+
+2016-01-03 17:22:04,560 DEBUG [main] server.Server  -loadUsernamePasswordProperties - LEAVE
+
+2016-01-03 17:22:04,560 DEBUG [main] server.Server  -loadProperties - LEAVE
+
+2016-01-03 17:22:04,560 DEBUG [main] server.Server  -loadRevisionNumberAndFileStatus - ENTER
+
+2016-01-03 17:22:04,560 INFO  [main] server.Server  -currentRevisionNumber = 0
+
+2016-01-03 17:22:04,568 DEBUG [main] server.Server  -loadRevisionNumberAndFileStatus - LEAVE
+
+2016-01-03 17:22:04,572 DEBUG [main] server.Server  -shutdown - ENTER
+
+2016-01-03 17:22:04,572 DEBUG [main] server.Server  -saveRevisionNumberAndFilesStatus - ENTER
+
+2016-01-03 17:22:04,580 DEBUG [main] server.Server  -saveRevisionNumberAndFilesStatus - LEAVE
+
+2016-01-03 17:22:04,580 DEBUG [main] server.Server  -shutdown - LEAVE
+
+2016-01-03 17:22:04,580 ERROR [main] server.Server  -Exception while initializing Server Exception : java.net.BindException: Address already in use: JVM_Bind
+
+2016-01-03 17:22:06,124 DEBUG [main] client.Client  -Client Constructor - ENTER
+
+2016-01-03 17:22:06,124 DEBUG [main] client.Client  -loadClientProperties - ENTER
+
+2016-01-03 17:22:06,124 DEBUG [main] client.Client  -loadClientProperties - LEAVE
+
+2016-01-03 17:22:06,124 DEBUG [main] client.Client  -loadFilesStatus - ENTER
+
+2016-01-03 17:22:06,136 INFO  [main] client.Client  - filesStatusMap = {\Client2\config\log4j.properties=5, \The_Naked_Ape.pdf=12, \Client2\log\Log.log=2, \Client1\Client.jar=22, \Client2\client1.properties=4, \Client2\client.dat=1, \The Intelligent Investor - BENJAMIN GRAHAM.pdf=-1, \Client1\log\Log.log=20, \Effective Java - 2nd Edition.pdf=16, \Client1\config\log4j.properties=17, \sql_tutorial.pdf=13, \Head First Design Patterns.pdf=-1, \Client1\client1.properties=18, \Client2\Client.jar=3, \New Text Document.txt=8}
+
+2016-01-03 17:22:06,136 DEBUG [main] client.Client  -loadFilesStatus - LEAVE
+
+2016-01-03 17:22:06,148 DEBUG [Thread-0] server.ServerConnectionWorker  -new Client connected
+
+2016-01-03 17:22:06,148 INFO  [Thread-0] server.ClientHandler  -client handler initialized
+
+2016-01-03 17:22:06,150 DEBUG [Thread-0] server.ServerConnectionWorker  -Waiting for new connection request
+
+2016-01-03 17:22:06,150 ERROR [main] client.Client  -Exception while initializing clientjava.net.BindException: Address already in use: JVM_Bind
+
+2016-01-03 17:22:06,150 DEBUG [main] client.Client  -destroy - ENTER
+
+2016-01-03 17:22:06,150 DEBUG [pool-1-thread-4] server.ClientHandler  -Executing ClientHandler
+
+2016-01-03 17:22:06,150 DEBUG [main] client.Client  -saveFilesStatus - ENTER
+
+2016-01-03 17:22:06,150 DEBUG [pool-1-thread-4] server.ClientHandler  -ClientHandler stopped
+
+2016-01-03 17:22:06,155 DEBUG [main] client.Client  -saveFilesStatus - ENTER
+
+2016-01-03 17:22:06,155 DEBUG [main] client.Client  -destroy - LEAVE
+
+2016-01-03 17:22:06,155 DEBUG [main] client.Client  -Client Constructor - LEAVE
+
+2016-01-03 17:22:16,478 DEBUG [main] server.Server  -initializeLogger - LEAVE
+
+2016-01-03 17:22:16,478 DEBUG [main] server.Server  -loadProperties - LEAVE
+
+2016-01-03 17:22:16,478 DEBUG [main] server.Server  -loadUsernamePasswordProperties - LEAVE
+
+2016-01-03 17:22:16,478 DEBUG [main] server.Server  -initializeLogger - ENTER
+
+2016-01-03 17:22:16,482 DEBUG [main] server.Server  -initializeLogger - LEAVE
+
+2016-01-03 17:22:16,482 DEBUG [main] server.Server  -loadUsernamePasswordProperties - LEAVE
+
+2016-01-03 17:22:16,486 DEBUG [main] server.Server  -loadProperties - LEAVE
+
+2016-01-03 17:22:16,486 DEBUG [main] server.Server  -loadRevisionNumberAndFileStatus - ENTER
+
+2016-01-03 17:22:16,486 INFO  [main] server.Server  -currentRevisionNumber = 0
+
+2016-01-03 17:22:16,494 DEBUG [main] server.Server  -loadRevisionNumberAndFileStatus - LEAVE
+
+2016-01-03 17:22:16,498 DEBUG [main] server.ServerConnectionWorker  -ServerConnectionWorker Constructor - ENTER
+
+2016-01-03 17:22:16,502 DEBUG [main] server.ServerConnectionWorker  -ServerConnectionWorker Constructor - LEAVE
+
+2016-01-03 17:22:16,502 DEBUG [pool-1-thread-1] server.SyncPropogationWorker  -SyncPropogationWorker Thread -  ENTER
+
+2016-01-03 17:22:16,502 DEBUG [main] server.Server  -serverConnectionThread started
+
+2016-01-03 17:22:16,502 DEBUG [Thread-0] server.ServerConnectionWorker  -Server Connection Started
+
+2016-01-03 17:22:16,502 DEBUG [Thread-0] server.ServerConnectionWorker  -Waiting for new connection request
+
+2016-01-03 17:23:22,041 DEBUG [main] server.Server  -initializeLogger - LEAVE
+
+2016-01-03 17:23:22,041 DEBUG [main] server.Server  -loadProperties - LEAVE
+
+2016-01-03 17:23:22,041 DEBUG [main] server.Server  -loadUsernamePasswordProperties - LEAVE
+
+2016-01-03 17:23:22,049 DEBUG [main] server.Server  -initializeLogger - LEAVE
+
+2016-01-03 17:23:22,049 DEBUG [main] server.Server  -loadUsernamePasswordProperties - LEAVE
+
+2016-01-03 17:23:22,049 DEBUG [main] server.Server  -loadProperties - LEAVE
+
+2016-01-03 17:23:22,049 DEBUG [main] server.Server  -loadRevisionNumberAndFileStatus - ENTER
+
+2016-01-03 17:23:22,049 INFO  [main] server.Server  -currentRevisionNumber = 0
+
+2016-01-03 17:23:22,057 DEBUG [main] server.Server  -loadRevisionNumberAndFileStatus - LEAVE
+
+2016-01-03 17:23:22,061 DEBUG [main] server.ServerConnectionWorker  -ServerConnectionWorker Constructor - ENTER
+
+2016-01-03 17:23:22,065 DEBUG [main] server.ServerConnectionWorker  -ServerConnectionWorker Constructor - LEAVE
+
+2016-01-03 17:23:22,065 DEBUG [pool-1-thread-1] server.SyncPropogationWorker  -SyncPropogationWorker Thread -  ENTER
+
+2016-01-03 17:23:22,065 DEBUG [main] server.Server  -serverConnectionThread started
+
+2016-01-03 17:23:22,065 DEBUG [Thread-0] server.ServerConnectionWorker  -Server Connection Started
+
+2016-01-03 17:23:22,065 DEBUG [Thread-0] server.ServerConnectionWorker  -Waiting for new connection request
+
+2016-01-03 17:23:24,781 DEBUG [main] client.Client  -Client Constructor - ENTER
+
+2016-01-03 17:23:24,785 DEBUG [main] client.Client  -loadClientProperties - ENTER
+
+2016-01-03 17:23:24,785 DEBUG [main] client.Client  -loadClientProperties - LEAVE
+
+2016-01-03 17:23:24,785 DEBUG [main] client.Client  -loadFilesStatus - ENTER
+
+2016-01-03 17:23:24,797 INFO  [main] client.Client  - filesStatusMap = {\Client2\config\log4j.properties=5, \The_Naked_Ape.pdf=12, \Client1\Client.jar=22, \Client2\log\Log.log=2, \Client2\client1.properties=4, \Client2\client.dat=1, \The Intelligent Investor - BENJAMIN GRAHAM.pdf=-1, \Effective Java - 2nd Edition.pdf=16, \Client1\log\Log.log=20, \Client1\config\log4j.properties=17, \Head First Design Patterns.pdf=-1, \sql_tutorial.pdf=13, \Client1\client1.properties=18, \Client2\Client.jar=3, \New Text Document.txt=8}
+
+2016-01-03 17:23:24,797 DEBUG [main] client.Client  -loadFilesStatus - LEAVE
+
+2016-01-03 17:23:24,805 DEBUG [Thread-0] server.ServerConnectionWorker  -new Client connected
+
+2016-01-03 17:23:24,808 INFO  [main] client.Client  -Client Connected : Writing userName
+
+2016-01-03 17:23:24,808 DEBUG [main] client.Client  -sendMessageToServer - ENTER Action = USRNAME_PASSWORD message = Client2:password
+
+2016-01-03 17:23:24,808 DEBUG [main] client.Client  -sendMessageToServer - LEAVE
+
+2016-01-03 17:23:24,809 DEBUG [main] client.file_change_detector.ScanBasedFileChangeDetector  -ScanBasedFileChangeDetector Constructor - ENTER
+
+2016-01-03 17:23:24,809 DEBUG [main] client.file_change_detector.ScanBasedFileChangeDetector  -ScanBasedFileChangeDetector Constructor - LEAVE
+
+2016-01-03 17:23:24,809 INFO  [Thread-0] server.ClientHandler  -client handler initialized
+
+2016-01-03 17:23:24,809 DEBUG [Thread-0] server.ServerConnectionWorker  -Waiting for new connection request
+
+2016-01-03 17:23:24,809 DEBUG [pool-1-thread-2] server.ClientHandler  -Executing ClientHandler
+
+2016-01-03 17:23:24,809 INFO  [main] client.Client  -fileChangeDetector started
+
+2016-01-03 17:23:24,809 DEBUG [pool-1-thread-2] common.EncryptionUtil  -decrypt Enter message = 4:Client2:password
+
+2016-01-03 17:23:24,809 INFO  [pool-1-thread-2] server.ClientHandler  -actualMessage = 4:Client2:password
+
+2016-01-03 17:23:24,809 INFO  [main] client.Client  -ClientSocketListenerWorker started
+
+2016-01-03 17:23:24,809 DEBUG [Thread-1] client.ClientSocketListenerWorker  -ClientSocketListenerStarted
+
+2016-01-03 17:23:24,809 INFO  [pool-1-thread-2] server.ClientHandler  -Action :USRNAME_PASSWORD Message received from client = Client2:password
+
+2016-01-03 17:23:24,809 DEBUG [Thread-1] client.Client  -sendMessageToServer - ENTER Action = FILE_SOCKET_PORT message = 3002
+
+2016-01-03 17:23:24,809 DEBUG [pool-1-thread-2] server.Server  -validateUsernameAndPassword - ENTER username = Client2 password = password ipAddress = 127.0.0.1
+
+2016-01-03 17:23:24,809 DEBUG [Thread-1] client.Client  -sendMessageToServer - LEAVE
+
+2016-01-03 17:23:24,813 INFO  [Thread-1] client.ClientSocketListenerWorker  -waiting for message from server
+
+2016-01-03 17:23:24,813 INFO  [pool-1-thread-2] server.Server  -usernamePasswordProperties = {client2=password:127.0.0.1, client1=password:127.0.0.1, client=password:127.0.0.1, client3=password:127.0.0.1}
+
+2016-01-03 17:23:24,813 INFO  [pool-1-thread-2] server.Server  -clientPasswordAndIpAddress = null
+
+2016-01-03 17:24:12,571 ERROR [Thread-1] client.ClientSocketListenerWorker  -Exception while reading from server, CLosing thread :java.net.SocketException: Connection reset
+
+2016-01-03 17:24:12,571 DEBUG [Thread-1] client.ClientSocketListenerWorker  -ClientSocketListener Stoped
+
+2016-01-03 17:24:12,571 INFO  [main] client.Client  -ClientSocketListenerWorker stopped
+
+2016-01-03 17:24:12,572 DEBUG [main] client.Client  -destroy - ENTER
+
+2016-01-03 17:24:12,572 DEBUG [main] client.Client  -saveFilesStatus - ENTER
+
+2016-01-03 17:24:12,588 DEBUG [main] client.Client  -saveFilesStatus - ENTER
+
+2016-01-03 17:24:12,588 DEBUG [main] client.Client  -destroy - LEAVE
+
+2016-01-03 17:24:12,588 DEBUG [main] client.Client  -Client Constructor - LEAVE
+
+2016-01-03 17:24:17,644 DEBUG [main] server.Server  -initializeLogger - LEAVE
+
+2016-01-03 17:24:17,644 DEBUG [main] server.Server  -loadProperties - LEAVE
+
+2016-01-03 17:24:17,644 DEBUG [main] server.Server  -loadUsernamePasswordProperties - LEAVE
+
+2016-01-03 17:24:17,648 DEBUG [main] server.Server  -initializeLogger - LEAVE
+
+2016-01-03 17:24:17,648 DEBUG [main] server.Server  -loadUsernamePasswordProperties - LEAVE
+
+2016-01-03 17:24:17,648 DEBUG [main] server.Server  -loadProperties - LEAVE
+
+2016-01-03 17:24:17,648 DEBUG [main] server.Server  -loadRevisionNumberAndFileStatus - ENTER
+
+2016-01-03 17:24:17,652 INFO  [main] server.Server  -currentRevisionNumber = 0
+
+2016-01-03 17:24:17,660 DEBUG [main] server.Server  -loadRevisionNumberAndFileStatus - LEAVE
+
+2016-01-03 17:24:17,660 DEBUG [main] server.ServerConnectionWorker  -ServerConnectionWorker Constructor - ENTER
+
+2016-01-03 17:24:17,664 DEBUG [main] server.ServerConnectionWorker  -ServerConnectionWorker Constructor - LEAVE
+
+2016-01-03 17:24:17,664 DEBUG [pool-1-thread-1] server.SyncPropogationWorker  -SyncPropogationWorker Thread -  ENTER
+
+2016-01-03 17:24:17,664 DEBUG [main] server.Server  -serverConnectionThread started
+
+2016-01-03 17:24:17,664 DEBUG [Thread-0] server.ServerConnectionWorker  -Server Connection Started
+
+2016-01-03 17:24:17,668 DEBUG [Thread-0] server.ServerConnectionWorker  -Waiting for new connection request
+
+2016-01-03 17:24:19,048 DEBUG [main] client.Client  -Client Constructor - ENTER
+
+2016-01-03 17:24:19,048 DEBUG [main] client.Client  -loadClientProperties - ENTER
+
+2016-01-03 17:24:19,048 DEBUG [main] client.Client  -loadClientProperties - LEAVE
+
+2016-01-03 17:24:19,048 DEBUG [main] client.Client  -loadFilesStatus - ENTER
+
+2016-01-03 17:24:19,060 INFO  [main] client.Client  - filesStatusMap = {\Client2\config\log4j.properties=5, \The_Naked_Ape.pdf=12, \Client2\log\Log.log=2, \Client1\Client.jar=22, \Client2\client1.properties=4, \Client2\client.dat=1, \The Intelligent Investor - BENJAMIN GRAHAM.pdf=-1, \Client1\log\Log.log=20, \Effective Java - 2nd Edition.pdf=16, \Client1\config\log4j.properties=17, \sql_tutorial.pdf=13, \Head First Design Patterns.pdf=-1, \Client1\client1.properties=18, \Client2\Client.jar=3, \New Text Document.txt=8}
+
+2016-01-03 17:24:19,060 DEBUG [main] client.Client  -loadFilesStatus - LEAVE
+
+2016-01-03 17:24:19,072 DEBUG [Thread-0] server.ServerConnectionWorker  -new Client connected
+
+2016-01-03 17:24:19,072 INFO  [main] client.Client  -Client Connected : Writing userName
+
+2016-01-03 17:24:19,072 DEBUG [main] client.Client  -sendMessageToServer - ENTER Action = USRNAME_PASSWORD message = Client2:password
+
+2016-01-03 17:24:19,072 DEBUG [main] client.Client  -sendMessageToServer - LEAVE
+
+2016-01-03 17:24:19,073 DEBUG [main] client.file_change_detector.ScanBasedFileChangeDetector  -ScanBasedFileChangeDetector Constructor - ENTER
+
+2016-01-03 17:24:19,073 INFO  [Thread-0] server.ClientHandler  -client handler initialized
+
+2016-01-03 17:24:19,073 DEBUG [main] client.file_change_detector.ScanBasedFileChangeDetector  -ScanBasedFileChangeDetector Constructor - LEAVE
+
+2016-01-03 17:24:19,073 DEBUG [Thread-0] server.ServerConnectionWorker  -Waiting for new connection request
+
+2016-01-03 17:24:19,073 DEBUG [pool-1-thread-2] server.ClientHandler  -Executing ClientHandler
+
+2016-01-03 17:24:19,073 INFO  [main] client.Client  -fileChangeDetector started
+
+2016-01-03 17:24:19,073 DEBUG [pool-1-thread-2] common.EncryptionUtil  -decrypt Enter message = 4:Client2:password
+
+2016-01-03 17:24:19,073 INFO  [pool-1-thread-2] server.ClientHandler  -actualMessage = 4:Client2:password
+
+2016-01-03 17:24:19,073 INFO  [pool-1-thread-2] server.ClientHandler  -Action :USRNAME_PASSWORD Message received from client = Client2:password
+
+2016-01-03 17:24:19,073 DEBUG [pool-1-thread-2] server.Server  -validateUsernameAndPassword - ENTER username = Client2 password = password ipAddress = 127.0.0.1
+
+2016-01-03 17:24:19,073 INFO  [main] client.Client  -ClientSocketListenerWorker started
+
+2016-01-03 17:24:19,073 INFO  [pool-1-thread-2] server.Server  -usernamePasswordProperties = {client2=password:127.0.0.1, client1=password:127.0.0.1, client=password:127.0.0.1, client3=password:127.0.0.1}
+
+2016-01-03 17:24:19,073 DEBUG [Thread-1] client.ClientSocketListenerWorker  -ClientSocketListenerStarted
+
+2016-01-03 17:24:19,073 INFO  [pool-1-thread-2] server.Server  -clientPasswordAndIpAddress = password:127.0.0.1
+
+2016-01-03 17:24:19,073 DEBUG [Thread-1] client.Client  -sendMessageToServer - ENTER Action = FILE_SOCKET_PORT message = 3002
+
+2016-01-03 17:24:19,077 DEBUG [Thread-1] client.Client  -sendMessageToServer - LEAVE
+
+2016-01-03 17:24:19,077 DEBUG [pool-1-thread-2] common.EncryptionUtil  -decrypt Enter message = 11:3002
+
+2016-01-03 17:24:19,077 INFO  [Thread-1] client.ClientSocketListenerWorker  -waiting for message from server
+
+2016-01-03 17:24:19,077 INFO  [pool-1-thread-2] server.ClientHandler  -actualMessage = 11:3002
+
+2016-01-03 17:24:19,077 INFO  [pool-1-thread-2] server.ClientHandler  -Action :FILE_SOCKET_PORT Message received from client = 3002
+
+2016-01-03 17:26:15,632 ERROR [Thread-1] client.ClientSocketListenerWorker  -Exception while reading from server, CLosing thread :java.net.SocketException: Connection reset
+
+2016-01-03 17:26:15,632 DEBUG [Thread-1] client.ClientSocketListenerWorker  -ClientSocketListener Stoped
+
+2016-01-03 17:26:15,632 INFO  [main] client.Client  -ClientSocketListenerWorker stopped
+
+2016-01-03 17:26:15,633 DEBUG [main] client.Client  -destroy - ENTER
+
+2016-01-03 17:26:15,633 DEBUG [main] client.Client  -saveFilesStatus - ENTER
+
+2016-01-03 17:26:15,645 DEBUG [main] client.Client  -saveFilesStatus - ENTER
+
+2016-01-03 17:26:15,645 DEBUG [main] client.Client  -destroy - LEAVE
+
+2016-01-03 17:26:15,649 DEBUG [main] client.Client  -Client Constructor - LEAVE
+
