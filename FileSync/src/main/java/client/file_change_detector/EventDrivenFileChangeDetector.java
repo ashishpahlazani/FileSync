@@ -11,12 +11,19 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.nio.file.ClosedWatchServiceException;
 import java.nio.file.FileSystems;
+import java.nio.file.FileVisitResult;
+import java.nio.file.Files;
+import java.nio.file.LinkOption;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.nio.file.SimpleFileVisitor;
 import java.nio.file.WatchEvent;
 import java.nio.file.WatchKey;
 import java.nio.file.WatchService;
+import java.nio.file.attribute.BasicFileAttributes;
+import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Map;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
@@ -33,6 +40,7 @@ public abstract class EventDrivenFileChangeDetector extends FileChangeDetectorTi
 	private static final Logger logger = Logger.getLogger(EventDrivenFileChangeDetector.class);
 	private WatchService watcher;
 	private WatchKey key;
+	private Map<WatchKey, Path> keyMap = new HashMap<WatchKey, Path>();
 	private String rootFolderPath;
 
 	EventDrivenFileChangeDetector(String filePath) {
@@ -42,12 +50,30 @@ public abstract class EventDrivenFileChangeDetector extends FileChangeDetectorTi
 		Path path = Paths.get(filePath, "");
 		try {
 			watcher = FileSystems.getDefault().newWatchService();
-			key = path.register(watcher, ENTRY_CREATE, ENTRY_DELETE, ENTRY_MODIFY);
+			//key = path.register(watcher, ENTRY_CREATE, ENTRY_DELETE, ENTRY_MODIFY);
+			registerAll(path);
 		} catch (IOException e) {
 			logger.error("Exception while initializing watcher : " + e);
 		}
 		if (logger.isDebugEnabled())
 			logger.debug("EventDrivenFileChangeDetector Constructor - LEAVE");
+	}
+	
+	private void registerAll(Path rootFolderPath)
+	{
+		try {
+			Files.walkFileTree(rootFolderPath, new SimpleFileVisitor<Path>() {
+			    @Override
+			    public FileVisitResult preVisitDirectory(Path dir, BasicFileAttributes attrs)
+			        throws IOException
+			    {
+			    	keyMap.put(dir.register(watcher, ENTRY_CREATE, ENTRY_DELETE, ENTRY_MODIFY), dir);
+			        return FileVisitResult.CONTINUE;
+			    }
+			});
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 	}
 
 	@Override
@@ -76,27 +102,42 @@ public abstract class EventDrivenFileChangeDetector extends FileChangeDetectorTi
 			}
 
 			if (key != null) {
+				Path dir = keyMap.get(key);
+	            if (dir == null) {
+	                logger.error("wrong watch key");
+	                continue;
+	            }
+				
+				
 				for (WatchEvent<?> event : key.pollEvents()) {
 					WatchEvent.Kind<?> kind = event.kind();
+					Path name = (Path) event.context();
+					System.out.println(name);
+					Path absolutePath = dir.resolve(name);
+					System.out.println(absolutePath);
 					if (kind == OVERFLOW) {
 						continue;
 					}
 
 					if (kind == ENTRY_CREATE) {
-						System.out.println("create Entry");
-						createEntrySet.add(event.context().toString());
+						logger.info("create Entry");
+						if(Files.isDirectory(absolutePath, LinkOption.NOFOLLOW_LINKS))
+						{
+							registerAll(absolutePath);
+						}
+						createEntrySet.add(absolutePath.toString());
 						continue;
 					}
 
 					if (kind == ENTRY_MODIFY) {
-						if (createEntrySet.contains(event.context().toString())) {
+						if (createEntrySet.contains(absolutePath.toString())) {
 							System.out.println("modify in same cycle");
 							kind = ENTRY_CREATE;
-							createEntrySet.remove(event.context().toString());
-						} else if (oldCreateEntrySet.contains(event.context().toString())) {
+							createEntrySet.remove(absolutePath.toString());
+						} else if (oldCreateEntrySet.contains(absolutePath.toString())) {
 							System.out.println("modify in next cycle");
 							kind = ENTRY_CREATE;
-							oldCreateEntrySet.remove(event.context().toString());
+							oldCreateEntrySet.remove(absolutePath.toString());
 						}
 					}
 					/*
@@ -104,7 +145,7 @@ public abstract class EventDrivenFileChangeDetector extends FileChangeDetectorTi
 					 * event.context().toString());
 					 */
 
-					onChange(new File(rootFolderPath + "/" + event.context().toString()), getAction(kind));
+					onChange(new File(absolutePath.toString()), getAction(kind));
 				}
 			}
 
@@ -113,7 +154,7 @@ public abstract class EventDrivenFileChangeDetector extends FileChangeDetectorTi
 			// too. SO we can notify them
 			for (String path : oldCreateEntrySet) {
 				System.out.println("updating " + path + " in second cycle");
-				onChange(new File(rootFolderPath + "/" + path), getAction(ENTRY_CREATE));
+				onChange(new File(path), getAction(ENTRY_CREATE));
 			}
 			oldCreateEntrySet.clear();
 
