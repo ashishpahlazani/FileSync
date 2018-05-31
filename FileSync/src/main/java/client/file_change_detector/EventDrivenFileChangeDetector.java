@@ -7,7 +7,6 @@ import static java.nio.file.StandardWatchEventKinds.OVERFLOW;
 
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.nio.file.ClosedWatchServiceException;
 import java.nio.file.FileSystems;
@@ -36,17 +35,15 @@ import common.Actions;
  * @author Ashish Pahlazani Incomplete implementation
  */
 public abstract class EventDrivenFileChangeDetector extends FileChangeDetectorTimerTask {
-	private static final int eventPollingInterval = 1000;
+	private static final int EVENT_POLLING_INTERVAL = 1000;
 	private static final Logger logger = Logger.getLogger(EventDrivenFileChangeDetector.class);
 	private WatchService watcher;
 	private WatchKey key;
-	private Map<WatchKey, Path> keyMap = new HashMap<WatchKey, Path>();
-	private String rootFolderPath;
+	private Map<WatchKey, Path> keyMap = new HashMap<>();
 
 	EventDrivenFileChangeDetector(String filePath) {
 		if (logger.isDebugEnabled())
 			logger.debug("EventDrivenFileChangeDetector Constructor - ENTER");
-		this.rootFolderPath = filePath;
 		Path path = Paths.get(filePath, "");
 		try {
 			watcher = FileSystems.getDefault().newWatchService();
@@ -72,7 +69,8 @@ public abstract class EventDrivenFileChangeDetector extends FileChangeDetectorTi
 			    }
 			});
 		} catch (IOException e) {
-			e.printStackTrace();
+			logger.error("Exception while registering file for watcher " + rootFolderPath, e);
+			//throw e;
 		}
 	}
 
@@ -81,22 +79,23 @@ public abstract class EventDrivenFileChangeDetector extends FileChangeDetectorTi
 		if (logger.isDebugEnabled())
 			logger.debug("EventDrivenFileChangeDetector Run - ENTER");
 
-		HashSet<String> createEntrySet = new HashSet<String>();
-		HashSet<String> oldCreateEntrySet = new HashSet<String>();
+		HashSet<String> createEntrySet = new HashSet<>();
+		HashSet<String> oldCreateEntrySet = new HashSet<>();
 
 		while (true) {
 
 			// wait for key to be signaled
 			try {
-				key = watcher.poll(eventPollingInterval, TimeUnit.MILLISECONDS);
+				key = watcher.poll(EVENT_POLLING_INTERVAL, TimeUnit.MILLISECONDS);
 			} catch (InterruptedException x) {
+				logger.warn( Thread.currentThread().getName() + " intrupted" , x);
 				return;
 			} catch (ClosedWatchServiceException exception) {
 				return;
 			}
 
 			// put existing entries in oldCreateEntrySet
-			if (createEntrySet.size() > 0) {
+			if (!createEntrySet.isEmpty()) {
 				oldCreateEntrySet.addAll(createEntrySet);
 				createEntrySet.clear();
 			}
@@ -108,13 +107,13 @@ public abstract class EventDrivenFileChangeDetector extends FileChangeDetectorTi
 	                continue;
 	            }
 				
-				
 				for (WatchEvent<?> event : key.pollEvents()) {
 					WatchEvent.Kind<?> kind = event.kind();
 					Path name = (Path) event.context();
-					System.out.println(name);
+					logger.debug("file name : " + name);
 					Path absolutePath = dir.resolve(name);
-					System.out.println(absolutePath);
+					logger.debug("file name : " + absolutePath);
+										
 					if (kind == OVERFLOW) {
 						continue;
 					}
@@ -128,8 +127,7 @@ public abstract class EventDrivenFileChangeDetector extends FileChangeDetectorTi
 						createEntrySet.add(absolutePath.toString());
 						continue;
 					}
-
-					if (kind == ENTRY_MODIFY) {
+					else if (kind == ENTRY_MODIFY) {
 						if (createEntrySet.contains(absolutePath.toString())) {
 							System.out.println("modify in same cycle");
 							kind = ENTRY_CREATE;
@@ -159,7 +157,7 @@ public abstract class EventDrivenFileChangeDetector extends FileChangeDetectorTi
 			oldCreateEntrySet.clear();
 
 			try {
-				Thread.sleep(eventPollingInterval);
+				Thread.sleep(EVENT_POLLING_INTERVAL);
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
@@ -211,16 +209,10 @@ public abstract class EventDrivenFileChangeDetector extends FileChangeDetectorTi
 	}
 
 	private static void initializeLogger(String propertyFilePath) {
-		/*
-		 * if (logger.isDebugEnabled())
-		 * logger.debug("initializeLogger - ENTER");
-		 */
 		Properties logProperties = new Properties();
 		try {
 			logProperties.load(new FileInputStream(propertyFilePath));
 			PropertyConfigurator.configure(logProperties);
-		} catch (FileNotFoundException e1) {
-			System.err.println("Exception while initializing Logger : " + e1);
 		} catch (IOException e1) {
 			System.err.println("Exception while initializing Logger : " + e1);
 		}

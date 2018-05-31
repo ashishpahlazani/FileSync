@@ -32,6 +32,9 @@ public class SyncPropogationWorker implements Runnable {
 			this.clientHandler = clientHandler;
 		}
 
+		/**
+		 * 
+		 */
 		public void execute() {
 			logger.info("executing task : Action = " + action
 					+ " relativePath " + relativePath + " Client = "
@@ -49,13 +52,24 @@ public class SyncPropogationWorker implements Runnable {
 		}
 	}
 
+	/**
+	 * @param clientHandlerList
+	 * @param clientSyncHandler
+	 */
 	public SyncPropogationWorker(List<ClientHandler> clientHandlerList,
 			IClientsSyncHandler clientSyncHandler) {
 		super();
 		this.clientSyncHandler = clientSyncHandler;
-		taskQueue = new LinkedBlockingDeque<SyncPropogationWorker.SyncPropogationTask>();
+		taskQueue = new LinkedBlockingDeque<>();
 	}
 
+	/**
+	 * This method will add the action to task queue, 
+	 * and will sync that action using other clientHandlers
+	 * @param action
+	 * @param relativePath
+	 * @param clientHandler
+	 */
 	public void enqueSyncTask(Actions action, String relativePath,
 			ClientHandler clientHandler) {
 		if (logger.isDebugEnabled())
@@ -71,16 +85,16 @@ public class SyncPropogationWorker implements Runnable {
 	@Override
 	public void run() {
 		if (logger.isDebugEnabled())
-			logger.debug("SyncPropogationWorker Thread -  ENTER");
+			logger.debug("SyncPropogationWorker Thread - ENTER");
 		while (clientSyncHandler.isServerRunning()) {
 			try {
 				SyncPropogationTask task = taskQueue.take();
 				task.execute();
 			} catch (InterruptedException e) {
-				logger.error("Exception while executing task : " + e);
+				logger.error("Interrupted while executing task : " + e);
 			}
 		}
 		if (logger.isDebugEnabled())
-			logger.debug("yncPropogationWorker Thread - LEAVE");
+			logger.debug("syncPropogationWorker Thread - LEAVE");
 	}
 }
